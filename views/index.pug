@@ -1,0 +1,21 @@
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        title=title
+        link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+        link(rel='stylesheet', href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+        
+        link(rel="stylesheet", href="style.css")
+    body
+        div.container 
+            input(type="text", placeholder='Name', id='name_contact')
+            input(type="text", placeholder='Phone number', id='number_contact')
+            button(id="btn_Add") Add Contact
+            div.cont
+                if contacts != null 
+                    each contact in contacts
+                        div.contact
+                            p= `${contact.id_book} ${contact.contact_name} ${contact.contact_phone}`
+                            span(class='delete Material-Icons' id=contact.id_book) delete 
+            
+    script(src="functions.js") 
